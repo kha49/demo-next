@@ -13,6 +13,8 @@ import {
   Grid,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import GraphDemo from './GraphDemo';
+import Graph from './graph';
 
 // Styled TableCell for better readability
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -178,10 +180,10 @@ const TableDemo = () => {
             <AssignedTable />
           </Grid>
           <Grid item xs={12}>
-            <CoverageGraphTable />
+            <Graph />
           </Grid>
           <Grid item xs={12}> {/* Chiếm toàn bộ chiều rộng trên mọi kích thước màn hình */}
-            <CLIGraphTable />
+            <GraphDemo />
           </Grid>
         </Grid>
       </Grid>

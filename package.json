@@ -14,11 +14,16 @@
     "@mui/material": "^6.4.2",
     "@mui/material-nextjs": "^6.4.2",
     "axios": "^1.7.9",
+    "chartjs": "^0.3.24",
+    "chartjs-plugin-annotation": "^3.1.0",
+    "chartjs-plugin-datalabels": "^2.2.0",
     "jotai": "^2.11.3",
-    "next": "15.1.6",
+    "next": "^15.1.6",
     "next-intl": "^3.26.3",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-chartjs-2": "^5.3.0",
+    "react-dom": "^19.0.0",
+    "recharts": "^2.15.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
