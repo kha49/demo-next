@@ -96,6 +96,7 @@ const data = {
   // Chart options
 const options: ChartOptions <'line'> = {
   responsive: true,
+  maintainAspectRatio: false,
   plugins: {
       // title: {
       //   display: true,
@@ -185,9 +186,8 @@ const options: ChartOptions <'line'> = {
 
 
   return (
-    <div style={{ backgroundColor: isDarkMode ? '#333' : '#fff', height: '100%' }}>
-      <h2 style={{ color: isDarkMode ? '#fff' : '#000' }}>CLI chart by month</h2>
-      <Line data={data} options={options} />
+    <div className="w-full h-[400px] p-4"> {/* Adjust height as needed */}
+      <Line options={options} data={data} />
     </div>
   );
 };

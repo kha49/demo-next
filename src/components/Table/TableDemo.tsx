@@ -15,6 +15,7 @@ import {
 import { styled } from '@mui/material/styles';
 import GraphDemo from './GraphDemo';
 import Graph from './graph';
+import GraphCursor from './GraphCursor';
 
 // Styled TableCell for better readability
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -118,11 +119,11 @@ const TableDemo = () => {
           <Grid item xs={12}> {/* Mỗi bảng chiếm một nửa chiều rộng trên màn hình trung bình trở lên */}
             <AssignedTable />
           </Grid>
-          <Grid item xs={12} sx={{height: '21rem', width :'100%', marginBottom: '1rem'}}>
+          <Grid item xs={12} sx={{height: '21rem', marginBottom: '1rem'}}>
             <Graph />
           </Grid>
           <Grid item xs={12} sx={{height: '20rem'}}> {/* Chiếm toàn bộ chiều rộng trên mọi kích thước màn hình */}
-            <GraphDemo />
+            <GraphCursor />
           </Grid>
         </Grid>
       </Grid>
