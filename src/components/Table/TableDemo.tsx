@@ -45,14 +45,11 @@ const LeaksTable = () => {
             <StyledTableCell>Q1 CLI</StyledTableCell>
             <StyledTableCell>Q2 %</StyledTableCell>
             <StyledTableCell>Q2 CLI</StyledTableCell>
-            <StyledTableCell>Q3 %</StyledTableCell>
-            <StyledTableCell>Q3 CLI</StyledTableCell>
-            <StyledTableCell>Q4 %</StyledTableCell>
-            <StyledTableCell>Q4 CLI</StyledTableCell>
+  
           </StyledTableRow>
         </TableHead>
         <TableBody>
-          {['A', 'B', 'C', 'D', 'E', 'A', 'B', 'C', 'D', 'A', 'B'].map((ville) => (
+          {['A', 'B', 'C', 'D', 'E', 'A', 'B', 'C', 'D', 'A', 'B', 'A', 'B', 'C', 'D', 'E', 'A', 'B', 'C', 'D', 'A', 'B', 'A', 'B', 'C', 'D', 'E', 'A', 'B', 'C', 'D', 'A', 'B'].map((ville) => (
             <TableRow key={ville}>
               <StyledTableCell component="th" scope="row" style={{ fontWeight: 'normal' }}>
                 {ville}
@@ -61,10 +58,7 @@ const LeaksTable = () => {
               <StyledTableCell>-</StyledTableCell>
               <StyledTableCell>-</StyledTableCell>
               <StyledTableCell>-</StyledTableCell>
-              <StyledTableCell>-</StyledTableCell>
-              <StyledTableCell>-</StyledTableCell>
-              <StyledTableCell>-</StyledTableCell>
-              <StyledTableCell>-</StyledTableCell>
+       
             </TableRow>
           ))}
         </TableBody>
@@ -109,67 +103,12 @@ const AssignedTable = () => {
   );
 };
 
-const CoverageGraphTable = () => {
-  return (
-    <TableContainer component={Paper} sx={{ mt: 4, overflowX: 'auto' }}>
-      <Typography variant="h6" component="div" sx={{ textAlign: 'center', mb: 2 }}>
-        Coverage Graph Last 12 months
-      </Typography>
-      <Table aria-label="Coverage Graph Table">
-        <TableHead>
-          <StyledTableRow>
-            <StyledTableCell>Q-3</StyledTableCell>
-            <StyledTableCell>Q-2</StyledTableCell>
-            <StyledTableCell>Q-1</StyledTableCell>
-            <StyledTableCell>CurrentQ</StyledTableCell>
-          </StyledTableRow>
-        </TableHead>
-        <TableBody>
-          <TableRow>
-            <StyledTableCell>-</StyledTableCell>
-            <StyledTableCell>-</StyledTableCell>
-            <StyledTableCell>-</StyledTableCell>
-            <StyledTableCell>-</StyledTableCell>
-          </TableRow>
-        </TableBody>
-      </Table>
-    </TableContainer>
-  );
-};
-
-const CLIGraphTable = () => {
-  return (
-    <TableContainer component={Paper} sx={{ mt: 4, overflowX: 'auto' }}>
-      <Typography variant="h6" component="div" sx={{ textAlign: 'center', mb: 2 }}>
-        CLI Graph Last 12 months
-      </Typography>
-      <Table aria-label="CLI Graph Table">
-        <TableHead>
-          <StyledTableRow>
-            <StyledTableCell>Q-3</StyledTableCell>
-            <StyledTableCell>Q-2</StyledTableCell>
-            <StyledTableCell>Q-1</StyledTableCell>
-            <StyledTableCell>CurrentQ</StyledTableCell>
-          </StyledTableRow>
-        </TableHead>
-        <TableBody>
-          <TableRow>
-            <StyledTableCell>-</StyledTableCell>
-            <StyledTableCell>-</StyledTableCell>
-            <StyledTableCell>-</StyledTableCell>
-            <StyledTableCell>-</StyledTableCell>
-          </TableRow>
-        </TableBody>
-      </Table>
-    </TableContainer>
-  );
-};
 
 const TableDemo = () => {
   return (
     <Grid container spacing={2} sx={{ padding: 3 }}>
       {/* Bảng LeaksTable ở bên trái (luôn chiếm toàn bộ chiều rộng trên màn hình nhỏ) */}
-      <Grid item xs={12} md={4}> {/* md={4} để chiếm 1/3 chiều rộng màn hình trung bình trở lên */}
+      <Grid item xs={12} md={4} sx={{overflowY: 'auto', maxHeight: '55rem'}}> {/* md={4} để chiếm 1/3 chiều rộng màn hình trung bình trở lên */}
         <LeaksTable />
       </Grid>
 
@@ -179,10 +118,10 @@ const TableDemo = () => {
           <Grid item xs={12}> {/* Mỗi bảng chiếm một nửa chiều rộng trên màn hình trung bình trở lên */}
             <AssignedTable />
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} sx={{height: '21rem', width :'100%', marginBottom: '1rem'}}>
             <Graph />
           </Grid>
-          <Grid item xs={12}> {/* Chiếm toàn bộ chiều rộng trên mọi kích thước màn hình */}
+          <Grid item xs={12} sx={{height: '20rem'}}> {/* Chiếm toàn bộ chiều rộng trên mọi kích thước màn hình */}
             <GraphDemo />
           </Grid>
         </Grid>

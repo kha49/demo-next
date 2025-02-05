@@ -6,8 +6,7 @@ import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { FunctionComponent } from 'react';
 import { useLocale } from 'next-intl';
-
-
+import {ArrowBack, Filter, FilterAlt} from '@mui/icons-material';
 
 interface SidebarProps {}
 
@@ -27,17 +26,17 @@ const Sidebar: FunctionComponent<SidebarProps> = () => {
   return (
     <div className="relative">
       <div
-        className={`bg-gray-900 text-white min-h-screen py-4  transition-transform duration-300 ${sidebarWidth} ${translateX} md:translate-x-0 absolute md:relative z-0 shadow-lg`}
+        className={`bg-gray-200 text-white min-h-screen py-4  transition-transform duration-300 ${sidebarWidth} ${translateX} md:translate-x-0 absolute md:relative z-20 shadow-lg`}
       >
         <div className="mb-6 flex items-center justify-between px-2">
           {isSidebarOpen && (
-            <h1 className="text-xl font-semibold text-gray-100 tracking-wider">Filters</h1>
+            <h1 className="text-xl font-semibold text-gray-900 tracking-wider">Filters</h1>
           )}
           <button
             onClick={toggleSidebar}
             className="bg-gray-700 hover:bg-gray-600 text-white p-2 rounded focus:outline-none transition-colors duration-200"
           >
-            <svg
+            {/* <svg
               className="w-5 h-5"
               fill="none"
               stroke="currentColor"
@@ -50,7 +49,8 @@ const Sidebar: FunctionComponent<SidebarProps> = () => {
                 strokeWidth="2"
                 d={isSidebarOpen ? 'M6 18L18 6M6 6l12 12' : 'M3 4h18M3 12h18M3 20h18'}
               ></path>
-            </svg>
+            </svg> */}
+            {isSidebarOpen? <ArrowBack /> : <FilterAlt sx={{backgroundColor:'green'}}/>}
           </button>
         </div>
       </div>
